@@ -1,0 +1,26 @@
+# Star Fighter 3000
+# © FEDNET Software 1994
+# Release 3
+
+_TaskName:Star Fighter 3000
+
+TooBig:Insufficient room to load file '%0'
+CalTopRight:Push joystick(s) to top right and press Enter
+CalBotLeft:Pull joystick(s) to bottom left and press Enter
+CalFinish:Joystick calibration complete
+NoCalib:Joystick calibration not supported
+SoundInUse:Star Fighter 3000 is using the sound system
+SoundClaim:Cannot claim use of the sound system (%0)
+TooOld:File '%0' has an unrecognised format (from a later version?)
+ReadFail:Failed to read data from '%0'
+WriteFail:Failed to write data to '%0'
+
+# Error handling
+OldErr:%0 - Click 'Cancel' to quit or 'OK' to attempt to continue.
+NewErr:%0 - Do you wish to quit or attempt to continue?
+FatErr:%0 - Sorry, the program must quit.
+QuitBut:Quit
+AnyKey:Press a key to continue.
+KeyQuit:Sorry, the program must quit (press any key).
+AskQuit:Quit program? (y/n)
+# (used with OS_Confirm - affirmative response varies between territories)

@@ -1,0 +1,8 @@
+| Installs an alternative Star Fighter 3000
+| configuration file that doesn't enable sound
+| on start up.
+
+If "<Choices$Write>" = "" Then Set Star3000$Choices <Star3000$Dir>.Choices Else Set Star3000$Choices <Choices$Write>.Star3000
+Echo Creating directory <Star3000$Choices>
+CDir <Star3000$Choices>
+Copy <Obey$Dir>.Config <Star3000$Choices>.Config C

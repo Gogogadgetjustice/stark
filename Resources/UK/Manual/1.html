@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>Star Fighter 3000 Pilot's Manual - Loading
+Instructions</TITLE>
+<META http-equiv="Content-Type" content=
+"text/html; charset=ISO-8859-1">
+</HEAD>
+<BODY bgcolor="#000000" text="#EFE510" link="#FF00FF" alink=
+"#FFDDFF" vlink="#B6BEEE" background="../../ManualPics/Stars.gif">
+<CENTER>
+<H1>Star Fighter 3000 Pilot's Manual</H1>
+
+<A href="index.html">Contents</A> / <A href="2.html">Next
+Chapter</A></CENTER>
+
+<HR>
+<CENTER>
+<H2><FONT color="#00EE00"><A name="1">- Loading Instructions
+-</A></FONT></H2>
+</CENTER>
+
+<H3><FONT color="#00C0FF"><A name="1-1">Machine
+Requirements</A></FONT></H3>
+
+<P>Star Fighter 3000 requires a computer with RISC OS 3, 4 or 5
+(minimum OS 3.1). It is compatible with StrongARM and the Iyonix
+PC. At least 4Mb of RAM is recommended; the game <EM>may</EM> work
+on a 2Mb machine but memory is likely to be very tight.</P>
+
+<P>An ARM 3 or better processor is recommended to use the higher
+detail levels. A fast ARM 7 machine is generally sufficient to play
+the game in full-screen mode at 'max' detail and 'medium' speed.
+For desktop play a StrongARM is recommended.</P>
+
+<P>The 'nested' Window Manager (i.e. version 3.8 or later) is
+required for the game's desktop interface. This is available as an
+upgrade for RISC OS 3 machines but only as part of Acorn's <A href=
+"http://www.riscos.com/ftp_space/generic/uniboot/">Universal
+!Boot</A>. On older machines the game may also need to load various
+modules from your !System directory, including the <A href=
+"http://www.riscos.com/ftp_space/generic/toolbox/">Toolbox</A>.</P>
+
+<P>Unlike some earlier versions of the game an updated version of
+the Shared C Library from Castle Technology Ltd is not required on
+machines running RISC OS 3 or 4.</P>
+
+<H3><FONT color="#00C0FF"><A name="1-2">Graphics
+Display</A></FONT></H3>
+
+<P>To run the game full screen you will require a suitable screen
+mode definition. The game's native screen resolution is
+320&times;256, which modern VGA monitors may not be able to display
+(except squashed vertically, also known as 'letterboxing').
+Alternative resolutions are therefore supported but they require an
+extra scaling step which may reduce the frame rate.</P>
+
+<P>The game will run at the correct speed regardless of the
+frequency of the mode, but for best effect a 50 Hz or 100 Hz mode
+is recommended. Mode definitions for a non-letterboxed 320 x 256
+100 Hz display on a VGA monitor such as an Acorn AKF60 are
+available from various sources.</P>
+
+<P>For optimal performance in the desktop it is best to use a
+screen mode where neither colour translation nor scaling is
+necessary. This implies 256 colours with standard palette and a
+display scale of 50% (assuming standard eigen factors of 1,1).</P>
+
+<H3><FONT color="#00C0FF"><A name="1-3">Sound
+Output</A></FONT></H3>
+
+<P>Upon being loaded the game will automatically decide whether to
+use (in order of preference) SharedSound, 16-bit sound or 8-bit
+sound.</P>
+
+<P>If the SharedSound module is detected then the game's sound will
+be mixed with any other sound sources, such as an MP3 music player.
+Otherwise the game will attempt to claim exclusive use of the sound
+system. If this claim fails then the game's sound will be
+disabled.</P>
+
+<P>N.B. It is strongly recommended that SharedSound be used on
+machines with 16 bit sound, since this eliminates the possibility
+of conflict with other applications.</P>
+
+<H3><FONT color="#00C0FF"><A name="1-4">Running the Game from
+CD-ROM</A></FONT></H3>
+
+<P>Where possible, configuration and high scores are stored in the
+standard location for program choices rather than inside the
+application directory. This means that the game can be run from
+CD-ROM (or other non-writable media) so long as you have a !Boot
+structure or external !Choices directory (part 19990915-001 from <A
+href="http://www.riscos.com">RISCOS Ltd</A>).</P>
+
+<H3><FONT color="#00C0FF"><A name="1-5">Hard Disc
+Installation</A></FONT></H3>
+
+<P>The game can be installed and run from hard disc; simply drag
+the !Star3000 application icon to the directory viewer where the
+game is to be installed. Early versions of Star Fighter 3000
+required the insertion of the original floppy disc before the game
+would run. This version is not copy protected in that manner.</P>
+
+<HR>
+<CENTER><A href="index.html">Contents</A> / <A href="2.html">Next
+Chapter</A></CENTER>
+</BODY>
+</HTML>
+

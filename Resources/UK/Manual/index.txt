@@ -1,0 +1,1090 @@
+
+                           Star Fighter 3000
+                             Pilot's Manual
+
+N.B. This text is best viewed at a display width of 76 columns or more. If
+your editor supports it you can generate a contents list by doing a 'List of
+found' search for ">>".
+
+----------------------------------------------------------------------------
+
+>> - Contents -
+   ============
+
+  1 - Loading Instructions -
+  1.1   Machine Requirements
+  1.2   Graphics Display
+  1.3   Sound Output
+  1.4   Running the Game from CD-ROM
+  1.5   Hard Disc Installation
+
+  2 - Introduction -
+  2.1   The Game
+  2.2   The Enemy ...
+
+  3 - Using the Desktop Interface
+  3.1   The Icon Bar
+  3.2   The Main Window
+  3.3   The Choices Dialogue Box
+        a) General options
+        b) Display options
+        c) Graphics options
+        d) Sound options
+        e) Key definition
+        f) Mouse options
+        g) Joystick options
+
+  4 - Using the Menu -
+  4.1   The Main Menu
+  4.2   The Configure Menu
+
+  5 - Levels & Pyramids -
+
+  6 - Controls & Information -
+  6.1   Flight Controls
+  6.2   In Game Controls
+  6.3   Weapon Selection
+  6.4   Camera Select
+  6.5   Spacecraft Views
+  6.6   Camera Control
+  6.7   Head-Up Display Information
+
+  7 - Using the Map -
+  7.1   Map Control Icons
+  7.2   Radar Information and Control
+
+  8 - Tactics -
+  8.1   Defensive Tactics
+  8.2   Friendly Formations
+        a) Getting a formation together.
+        b) Attacking with a formation.
+        c) Knowing when to retreat.
+        d) Re-allocation of targets.
+        e) Friendly fire & losses.
+
+  9 - Flight Control & Weapon Systems -
+  9.1   The Predator Mk-IV : Flight & Control
+  9.2   Defence Systems
+  9.3   Attack Systems
+  9.4   Taking Flak
+  9.5   Docking
+  9.6   Flying Other Ships
+  9.7   Bonus Coins and Parachutes
+
+  10 - Credits and Contact Details -
+  10.1  Credits
+  10.2  Contact Details
+
+----------------------------------------------------------------------------
+
+>> 1 - Loading Instructions -
+   ==========================
+
+>> 1.1 Machine Requirements
+
+  Star Fighter 3000 requires a computer with RISC OS 3, 4 or 5 (minimum OS
+3.1). It is compatible with StrongARM and the Iyonix PC. At least 4Mb of RAM
+is recommended; the game MAY work on a 2Mb machine but memory is likely to
+be very tight.
+
+  An ARM 3 or better processor is recommended to use the higher detail
+levels. A fast ARM 7 machine is generally sufficient to play the game in
+full-screen mode at 'max' detail and 'medium' speed. For desktop play a
+StrongARM is recommended.
+
+  The 'nested' Window Manager (i.e. version 3.8 or later) is required for
+the game's desktop interface. This is available as an upgrade for RISC OS 3
+machines but only as part of Acorn's Universal !Boot
+(http://www.riscos.com/ftp_space/generic/uniboot/ ). On older machines the
+game may also need to load various modules from your !System directory,
+including the Toolbox (http://www.riscos.com/ftp_space/generic/toolbox/ ).
+
+  Unlike some earlier versions of the game an updated version of the Shared
+C Library from Castle Technology Ltd is no longer required on machines
+running RISC OS 3 or 4.
+
+>> 1.2 Graphics Display
+
+  To run the game full screen you will require a suitable screen mode
+definition. The game's native screen resolution is 320 x 256, which modern
+VGA monitors may not be able to display (except squashed vertically, also
+known as 'letterboxing'). Alternative resolutions are therefore supported
+but they require an extra scaling step which may reduce the frame rate.
+
+  The game will run at the correct speed regardless of the frequency of the
+mode, but for best effect a 50 Hz or 100 Hz mode is recommended. Mode
+definitions for a non-letterboxed 320 x 256 100 Hz display on a VGA monitor
+such as an Acorn AKF60 are available from various sources.
+
+  For optimal performance in the desktop it is best to use a screen mode
+where neither colour translation nor scaling is necessary. This implies 256
+colours with standard palette and a display scale of 50% (assuming standard
+eigen factors of 1,1).
+
+>> 1.3 Sound Output
+
+  Upon being loaded the game will automatically decide whether to use (in
+order of preference) SharedSound, 16-bit sound or 8-bit sound.
+
+  If the SharedSound module is detected then the game's sound will be mixed
+with any other sound sources, such as an MP3 music player. Otherwise the
+game will attempt to claim exclusive use of the sound system. If this claim
+fails then the game's sound will be disabled.
+
+  N.B. It is strongly recommended that SharedSound be used on machines with
+16 bit sound, since this eliminates the possibility of conflict with other
+applications.
+
+>> 1.4 Running the Game from CD-ROM
+
+  Where possible, configuration and high scores are stored in the standard
+location for program choices rather than inside the application directory.
+This means that the game can be run from CD-ROM (or other non-writable
+media) so long as you have a !Boot structure or external !Choices directory
+(part 19990915-001 from RISCOS Ltd).
+
+>> 1.5 Hard Disc Installation
+
+  The game can be installed and run from hard disc; simply drag the
+!Star3000 application icon to the directory viewer where the game is to be
+installed. Early versions of Star Fighter 3000 required the insertion of the
+original floppy disc before the game would run. This version is not copy
+protected in that manner.
+
+----------------------------------------------------------------------------
+
+>> 2 - Introduction
+   ================
+
+>> 2.1 The Game
+
+  Welcome to Star Fighter 3000, The highest rated game show ever on a
+Fednet universal satellite channel. The year is 3037, and peak-time TV has
+acquired its most successful audience participation show ever.
+
+  A result of the intensified battle for advertising revenue and military
+hardware between the two rival broadcasting companies, Fednet and TrashTV,
+lucky viewers were selected from thousands of applicants to take part in
+the Star Fighter UEP [Ultimate Expansion Programme].
+
+  The idea was simple ... Assemble an enormous military attack force around
+progressively difficult strategic locations (mostly belonging to TrashTV),
+invite viewers to take part in the ensuing battle, and broadcast the
+results ...
+
+Unfortunately, the battle soon escalated into a universal conflict. TrashTV
+quickly made a number of allies, (mainly on the promise of cheap
+advertising), each being a powerful military force in the galaxy.
+
+>> 2.2 The Enemy ...
+
+  The Dark Lord, 'He who is master of all that is evil' as he likes to be
+called. The commander in chief of a synthetic super-race based on several
+artificial death stars and leader of a brutal regime.
+
+  Thorg, an egotistical tribal warlord and leader of a primitive
+civilisation, hell-bent on sculpture and universal destruction.
+Intelligence reports indicate he is highly unstable as the result of
+generations of inter-breeding, and likes to dress up in a squirrel costume
+and play conkers in his spare time.
+
+  The I.C.T. Corporation - Pioneers in experimental terraforming for
+military research. Previous customers include both Fednet & TrashTV.
+
+  It's your job to eliminate them, and everybody else that stands in the
+way of Fednet's rightful position as the only purveyor of quality
+entertainment through the known universe. Destroy their buildings,
+Exterminate their armies, Grind them into the dust, all for points and
+prizes.
+
+----------------------------------------------------------------------------
+
+>> 3 - Using the Desktop Interface -
+   =================================
+
+  This version of Star Fighter 3000 runs under the Window Manager, allowing
+you to return to the desktop at any time to continue with other work. You
+can even play the game in a window, whilst other applications continue to
+run in the background! Interactive help is provided on all aspects of the
+desktop interface, and in most cases this should be sufficient.
+
+>> 3.1 The Icon Bar
+
+  When you run the game its application icon is installed on the icon bar.
+Clicking SELECT on this icon will open the main game window, whilst
+clicking ADJUST will open the Choices dialogue box.
+
+  The icon bar menu provides the following options:
+
+  Info         - Leads to a window giving information about the program.
+  Help...      - Opens this game manual.
+  Choices...   - Opens the Choices dialogue box.
+  Quit         - Quits the application.
+
+>> 3.2 The Main Window
+
+  The main window displays the same graphics that you would see in full-
+screen mode. Mouse clicks (except for MENU) and key presses are passed on to
+the game, though the latter only when the window has the input focus. The
+window will gain the input focus when you click on it - to get the input
+focus without side-effects hold down the Shift key when clicking.
+
+  If the mouse is being used for flight control then the pointer will be
+hidden and all mouse clicks (including MENU) will be claimed by the game.
+You can free the pointer by pressing F12 to remove the input focus from
+the game window; this will also suspend the game if configured to do so.
+
+  A pane attached to the bottom of the window displays the current speed of
+the game in frames per second (FPS). Adjacent to this figure, a slider
+provides a visual indication of whether the game is running slower than the
+configured speed. This pane can be shown or hidden using the Choices
+dialogue box.
+
+  The game window provides a menu:
+
+  Full screen  - The game takes over the entire screen, removing the
+                 distractions of window furniture. Multi-tasking is
+                 suspended when not in the desktop, which allows the game
+                 to run much faster. You can return to the desktop by
+                 pressing F12.
+
+  Suspend      - Ticking this option will pause the game and free up CPU
+                 time for other tasks. Suspension of the game is total, and
+                 thus distinct from the in-game pause facility (which allows
+                 continued control of camera views, for instance). You can
+                 configure the game to suspend itself automatically when it
+                 loses the input focus (see 'General options').
+
+  Scale view   - Leads to a dialogue box, which allows you to change the
+                 extent of the game window so that it takes up more or less
+                 space on the desktop. Either enter a percentage scale in
+                 the writable field, use the adjuster arrows, or select
+                 from one of the standard scales.
+
+  Screenshot   - Leads to a standard save box from which you can drag a
+                 file icon to a directory display or type in a complete file
+                 path. The game's current screen display will be saved to
+                 this location as a Sprite file.
+
+  Choices...   - Opens the Choices dialogue box (see below).
+
+  Help...      - Opens this game manual.
+
+>> 3.3 The Choices Dialogue Box
+
+  This dialogue box is split into several pages in order to keep it to a
+manageable size. Use the radio buttons down the right-hand side of the
+window to control which page is displayed.
+
+  The 'Cancel' button discards all changes. The 'Set' button confirms any
+changes and configures the game appropriately. The 'Save' button acts like
+'Set', with the addition that it writes the new configuration to file so
+that it is remembered next time the game is run.
+
+  You can keep the dialogue box open by clicking any of these buttons with
+ADJUST rather than SELECT. This is particularly useful with 'Cancel', to
+reset the dialogue box from the internal configuration.
+
+a) General options
+
+Speed limiter [Value]
+
+  This is the minimum time interval between frames, in centiseconds.
+  Reducing this value should speed the game up (if the computer is fast
+  enough); increasing it should slow the game down (and free up CPU time
+  for other tasks). The 'Slow', 'Medium' and 'Fast' speeds available from
+  the configure menu correspond to values 5, 4 and 3. In full screen mode,
+  the frame rate is also restricted by the monitor refresh frequency
+  (typically between 1 and 2 cs per frame).
+
+Suspend when focus lost [Off / On]
+
+  If enabled, the game will be suspended when the main window loses the
+  input focus. This can prevent a potentially fatal loss of control whilst
+  playing the game in the desktop.
+
+War backdrop for menu [Off / On]
+
+  Turning the backdrop off should make the in-game menus more responsive on
+  slow computers.
+
+Big ships launch missiles [Off / On]
+
+  A-T-A missile launch from big ships and space stations was broken in
+  earlier versions of the game and hence has not been thoroughly play
+  tested. You may wish to disable this option if a mission seems
+  unreasonably hard.
+
+Lasers hit bonus coins [Off / On]
+
+  In earlier versions of the game, lasers would hit any bonus coins in their
+  path. The default is now for lasers to pass straight through coins, but
+  you can restore the original behaviour by setting this option.
+
+Reset view when hit [Off / On]
+
+  If enabled, the view will automatically be reset to the player's
+  spacecraft (as though f9 had been pressed) whenever it is hit by incoming
+  fire.
+
+Rotate objects on map [Off / On]
+
+  If enabled, ground objects on the map are drawn in 3D and rotate
+  continuously. If disabled, the map is drawn as a static 2D plan view.
+
+Flight controls [Keys / Mouse / Joystick]
+
+  Use these radio buttons to choose the type of user input device to be
+  used for the principle flight controls (roll, dive, climb, thrust and
+  fire). When mouse or joystick control is configured, you can still use
+  the keyboard for other commands (e.g. to control camera views and
+  formations).
+
+b) Display options
+
+Initial display mode [Full screen / In a desktop window]
+
+  Use these radio buttons to choose whether the game starts in full-screen
+  mode or in a window on the desktop. (If the game starts in full-screen
+  mode then you will still be able to return to the desktop by pressing
+  F12.) You must save the configuration for this option to take effect.
+
+Full screen mode [320 x 256 / 320 x 480 / 640 x 480 / 640 x 512]
+
+  Click on the adjacent pop-up menu icon to choose the resolution of the
+  screen mode used when the game takes over the whole screen. VGA monitors
+  may not be able to display the game's native resolution of 320 x 256.
+  Alternative resolutions require an extra scaling step.
+
+Scale mouse pointer [Off / On]
+
+  If enabled, the game's mouse pointer shapes will be scaled when
+  appropriate. This option affects display in a desktop window or in full
+  screen mode with 480 lines. You may wish to disable it to avoid pointer
+  shapes being cropped at larger scales or in screen modes with small eigen
+  factors (this is a video hardware limitation).
+
+Display frame rate [Off / On]
+
+  If enabled, the current speed of the game will be displayed in a pane
+  attached to the bottom of the main window.
+
+Initial scale [Value]
+
+  This is a percentage scale to be applied to the main window when the game
+  is first loaded. Click on the button below to insert the current scale
+  into the writable field. You must save the configuration for this option
+  to take effect. To change the current scale, instead use the 'Scale view'
+  dialogue box.
+
+c) Graphics options
+
+Detail level [Very low / Low / Medium / High / Very high / Max / Custom]
+
+  This controls the quality of graphics rendering in the game. You can
+  select from one of a number of pre-set detail levels (which correspond to
+  those in the in-game menu) or else select 'Custom' and change the
+  individual settings yourself. Choosing a pre-set detail level will update
+  the sliders to show the new values. 'Custom' detail will automatically be
+  selected if you change any of the sliders.
+
+Texture map detail [Very low / Low / Medium / High]
+
+  You can select from a number of texture mapping algorithms, each of which
+  gives a different trade off between accuracy and speed.
+
+Objects plot distance [Slider]
+
+  The distance beyond which no objects are plotted.
+
+Objects height cut-off [Slider]
+
+  The height above which no ground installations are plotted.
+
+Hills & clouds cut-off [Slider]
+
+  The height above which not even mountains or clouds are plotted.
+
+d) Sound options
+
+Sound enabled [Off / On]
+
+  Allows you to completely disable all sound output from the game.
+
+4 channels / 8 channels
+
+  Use these radio buttons to select the maximum number of simultaneous sounds
+  to allow. Mixing 8 channels of 16 bit linear sound is quite CPU intensive,
+  so it is only recommended for more powerful machines (e.g. StrongARM).
+
+Volume [Slider]
+
+  Allows you to set the volume of game sound output with finer accuracy than
+  the pre-set levels available in the in-game configure menu. The volume
+  does not change as you drag the slider; to hear the new volume level you
+  must ADJUST-click the 'Set' button.
+
+Play game music [Off / On]
+
+  Allows you to disable the game music, for instance to listen to an audio
+  CD instead.
+
+Sound effects [Mono / Stereo / Reverse stereo]
+
+  Stereophonic sound effects require more calculation than monophonic
+  effects, so you may wish to disable them to obtain better performance on
+  slower machines. You should select 'reverse stereo' if your speakers are
+  the wrong way round.
+
+e) Key definition
+
+  This window lists the keyboard controls used by the game, all of which
+may be redefined (except for return to desktop, which is always F12). The
+current key definitions are displayed down the right-hand side, adjacent to
+their function name.
+
+  Click SELECT on one of the displayed keys to redefine it - the icon will
+be highlighted to show that it is awaiting your input. You may press any
+key except F12. When a key press has been recorded the highlight will move
+on to allow rapid definition of multiple keys. You can de-select the
+highlighted icon by ADJUST-clicking on it.
+
+  The flight control keys may only be used when neither mouse nor joystick
+control is enabled.
+
+  (Note: Users with a non-UK keyboard configured will see only key numbers
+rather than key names. Foreign keyboard layouts may be defined by adding a
+suitable message file to the !Star3000.Keyboards directory.)
+
+f) Mouse options
+
+Intercept mouse driver [Off / On]
+
+  To allow mouse control in the desktop without disrupting other
+  applications, the game intercepts low-level communications between
+  the mouse driver and OS kernel. If you disable this then the game
+  will revert to more conventional methods, but mouse control will
+  only operate in full screen mode. This option is not available on
+  RISC OS 3.1 machines.
+
+Sensitivity [Slider]
+
+  The sensitivity of flight control using the mouse can be configured from
+  low (takes a long time to react) to high (reacts quickly, but can be
+  difficult to control). A slider allows finer adjustment than selecting
+  one of the pre-set levels from the in-game menu. Control sensitivity is
+  also affected by the configured mouse pointer speed unless mouse driver
+  interception is enabled.
+
+Auto-centre controls [Off / On]
+
+  With auto-centring enabled the flight controls will gradually return to a
+  neutral position when mouse movement ceases.
+
+Mouse buttons
+
+  Configuration of mouse buttons works on the principle of tying actions
+  to buttons. A display field shows the action currently configured for
+  each mouse button. To choose from a list of available actions, click on
+  the adjacent pop-up menu icon. Some actions replace the flight control
+  keys ('Fire weapon', 'Thrust') whilst others give access to commonly used
+  commands. 'Change weapon' cycles through your available weapon systems
+  (skipping any that have been exhausted) so that you don't have to reach
+  for the keyboard in the heat of battle.
+
+g) Joystick options
+
+Port number [Value]
+
+  Some interfaces support more than one joystick, which are then identified
+  by a number from 0 to 255. Usually you should configure the port number
+  to 0.
+
+Switched / Analogue
+
+  Use these radio buttons to specify whether your joystick is of the
+  switched ('Atari') or analogue ('PC') variety. The flight controls should
+  still work but may behave strangely if you configure the wrong type of
+  joystick.
+
+Calibrate joystick
+
+  Click this button and follow the on-screen instructions to calibrate your
+  analogue joystick to return its full range of values. This will only work
+  if your joystick software supports Acorn's calibration SWIs.
+
+Joystick buttons
+
+  This is similar to the configuration of mouse buttons. Up to eight
+  joystick buttons are supported, and you can choose an action to tie to
+  each. For more details see 'Mouse options'.
+
+----------------------------------------------------------------------------
+
+>> 4 - Using the Menu -
+   ====================
+
+  All options on the menu can be selected / altered using the return key or
+clicking the mouse. Use the cursor arrows or move the mouse to select
+different options.
+
+>> 4.1 The Main Menu
+
+Start Game   - Start the currently selected mission.
+
+New Game     - New game clears all progress on the current level pyramid,
+               and starts a new game.
+
+Select Level - This toggles through whether the game should start on the
+               Easy, Medium, or Hard level pyramid. Alternatively, you can
+               enter a password.
+
+               Selecting 'Pcode' displays the password for the last
+               completed mission and allows you to enter a new code, which
+               if correct, will select and set up the correct pyramid to a
+               previous setting and start the game.
+
+Configure    - Selects the configuration menu.
+
+Quit         - Quits the program.
+
+>> 4.2 The Configure Menu
+
+  Although the original in-game Configure menu has been retained in this
+version of Star Fighter 3000, it doesn't give access to all the options
+available from the Choices dialogue box (see 'Using the Desktop
+Interface') and often a more limited range of settings is available.
+
+  Some earlier versions of the game saved configuration to file every time
+it was updated. You now have to explicitly save configuration (using the
+desktop interface) if you wish to retain settings between sessions.
+
+Volume       - Alters the sound & music volume.
+
+Control      - Select Keyboard, Mouse or Joystick control. Mouse control
+               has 3 levels of sensitivity, 3 being the highest. Joystick
+               may be either switched (Atari-type) or analogue (PC-type).
+
+Setup        - Setup allows you to customise the game format by cycling
+               through 6 options, each of which can be selected and altered:
+
+- Setup Backdrop [On / Off]
+
+  This toggles the war backdrop. Turning the backdrop off will speed up
+  the menu.
+
+- Setup Detail   [V Low, Low, Medium, High, V High, Max]
+
+  Reducing the detail level will speed up the game (especially on 'V Low',
+  if your eyes can take it). The configured detail level affects both the
+  texture map and the distance at which you can see objects.
+
+- Setup Music    [On / Off]
+
+  Toggles the in game music.
+
+- Setup Speaker  [On / Off]
+
+  Switches the internal speaker on & off. Unlike other options, the speaker
+  state is not configured on start up.
+
+- Setup Keyboard
+
+  This option allows you to redefine the ship control keys. On selection,
+  you will be prompted with Left, Right, Dive, Climb, Thrust & Fire. Press
+  and then release the required key at each of these prompts.
+
+- Setup Speed    [Slow / Medium / Fast / Max]
+
+  This sets the maximum speed of the game, the default being 'Medium'. 'Max'
+  is unlimited just so people with fast computers can show off.
+
+- Setup Stereo   [On / Off / Reverse]
+
+  Turning off stereo sound effects will speed up the game. Reverse stereo
+  is for people with their speakers the wrong way round.
+
+----------------------------------------------------------------------------
+
+>> 5 - Levels & Pyramids -
+   =======================
+
+  There are 3 levels of competition, Easy, Medium and Hard. Each level is
+represented by a separate pyramid with 36 missions to complete over 8 sub-
+levels.
+
+  Completion of a mission will award you a performance based credit bonus
+and allow you to select one of the two missions directly above it.
+Completed missions are indicated by arrows / red squares. Missions
+completed at the top of the pyramid return selection to unfinished missions
+at the bottom.
+
+  Every time a new game is started, the score and ship status is reset, and
+you will get enough cash to see you through the first mission, 1200, 1400
+and 1600 credits for the first mission on each pyramid, with increments of
+100, 200 and 300 credits for every sub-level up.
+
+  Selecting 'New Game' from the main menu will clear all progress on the
+current pyramid and return you to the bottom.
+
+  Each level has 12 bonuses spread randomly throughout the pyramid,
+indicated by highlighted mission icons. Each bonus may earn you:
+
+Gamble       - Gamble with your ship's equipment (1)
+Sponsorship  - Earn cash from companies eager to advertise (1)
+Cash Prize   - Complete a mission in 1 life to receive cash
+Bonus Level  - 1 minute of parachute drops (2)
+Upgrade Ship - Randomly upgrades ship (1)
+Multiplier   - X all bonus coins and end-of-mission score
+Penalty      - Downgrade ship (1)
+
+1) You will not get these when flying special spacecraft.
+2) You will not get this on enclosed levels (e.g. I.C.T. hyperspace
+   facilities) or when flying special spacecraft.
+
+----------------------------------------------------------------------------
+
+>> 6 - Controls & Information -
+   ============================
+
+  Note that most key controls and the action of mouse or joystick buttons
+may be redefined from the defaults listed here.
+
+>> 6.1 Flight Controls
+
+Keyboard controls:
+
+         Z              - Roll left
+         X              - Roll right
+         '              - Dive
+         /              - Climb
+         Return         - Fire selected weapon
+         Right Alt      - Thrust
+
+Mouse controls:
+
+         Mouse Left     - Roll left
+         Mouse Right    - Roll right
+         Mouse Up       - Dive
+         Mouse Down     - Climb
+         Left Button    - Thrust
+         Middle Button  - Cycle weapons:
+                           (a) Lasers
+                           (b) Air to ground missiles
+                           (c) Air to air missiles
+                           ...and any super weapons
+         Right Button   - Fire selected weapon
+
+Joystick controls:
+
+         Joystick Left  - Roll left
+         Joystick Right - Roll right
+         Joystick Up    - Dive
+         Joystick Down  - Climb
+         Button 1       - Fire selected weapon
+         Button 2       - Thrust
+         Button 3       - Cycle weapons (as above)
+
+>> 6.2 In Game Controls
+
+         S            - View ship status
+         M            - View map
+         E            - Release ECM
+         P            - Pause game
+         R            - Re-group your formation
+         A            - Break formation for attack
+         T            - Toggle head-up display
+         Escape       - Quit game
+         f12          - Return to desktop or lose input focus
+
+>> 6.3 Weapon Selection
+
+         f1           - Lasers
+         f2           - Air to ground missiles
+         f3           - Air to air missiles
+         f4           - Cycle super weapons
+
+>> 6.4 Camera Select
+
+         f5           - Reset normal view
+         f6           - Tracking camera
+
+>> 6.5 Spacecraft Views
+
+         f9           - Reset view to player
+         f10          - Cycle through view types:
+                         (a) Player
+                         (b) Friendly spacecraft
+                         (c) Enemy spacecraft
+                         (d) Player weapons
+         f11          - View next instance of type
+
+>> 6.6 Camera Control
+
+         'Up Arrow'   - Forward view
+                        (+ Right Ctrl for up)
+         'Down Arrow' - Rear view
+                        (+ Right Ctrl for down)
+         'Left Arrow' - Camera left
+         'Right Arrow'- Camera right
+         'Page Up'    - Zoom camera in
+         'Page Down'  - Zoom camera out
+
+>> 6.7 Head-Up Display Information.
+
+During game play, the following information is shown on screen:
+
+Score                Shown on top left
+
+Shields - Green      Shows shields power out of total (red)
+        - Orange     Shows ship is under attack
+        - Flashing   Ship is damaged and repairing
+
+Speed                Sliding speed indicator shown over shields
+
+Current Weapon       Shown on top right + quantity
+
+E-C-M                Shown on top middle
+
+Direction + Grid Ref Shown on top right
+
+Formation Grid       Only displayed when friendly troops are in formation.
+                     This displays all ships and their relative positions.
+
+Distant ships        Shown as a cross, colour indicates type:
+
+        - Red        Enemy ship
+        - Green      Friendly ship
+        - White      Missile / Unclassified
+        - Orange     Credit
+
+----------------------------------------------------------------------------
+
+>> 7 - Using the Map -
+   ===================
+
+  The detail map (large) displays the complete combat area in varying
+detail and scale, showing all ships' locations, type and status. All ground
+objects are shown, including mission targets. To scroll the map use the
+cursor keys, or move the cursor to the edge and click the mouse. Selecting
+an area in the global map (small) will also move the detail map to that
+area.
+
+  To control the map cursor, use the mouse or alternatively the current
+flight controls (either keys or joystick, if configured).
+
+>> 7.1 Map Control Icons
+
+SMALL MAP    - The global map (small) shows airborne spacecraft and ground
+               targets only. Red, green & white crosses indicate enemy
+               ships, friendly ships and the player's ship respectively.
+               Selecting here will scroll the detailed map view.
+
+ZOOM ICONS   - Scales the current map view.
+
+RADAR ICON   - Toggles drawing of ground objects on the map.
+
+BRIEF ICON   - Brings up a text brief outlining the general details of the
+               mission and combat statistics. To close the mission brief,
+               de-select this icon.
+
+VIEW ICON    - Allows a detailed ground view of any ground targets from a
+               local position. If a camera view is available from a given
+               map location then the cursor will change to a [View Target]
+               prompt.
+
+STATUS ICON  - Displays current ship setup, and allows player to purchase
+               equipment (only on mission start or when docked in
+               mothership). Note: This is NOT available during special ship
+               setup missions (ie. prototype combat craft etc.)
+
+>> 7.2 Radar Information and Control
+
+Fighter Spacecraft - These flash between their I-D Code and their current
+                     direction.
+The 1st letter indicates type: [E] Enemy
+                               [F] Friendly
+
+The 2nd indicates status:      [A] Attacking
+                               [P] Patrolling flightpath.
+                               [F] Flying in formation.
+
+Large Spacecraft - These flash a large 'S' symbol, and their current
+                   direction. This applies to all large craft except Fednet
+                   motherships which show up as an 'M'.
+
+Airborne Targets - Aircraft with a special mission significance show their
+                   status instead of a direction:
+- A Cross indicates that the ship has to be destroyed (or be destroyed
+prior to it reaching its destination.)
+- A Heart indicates that the ship must survive (or be safely escorted to
+its destination)
+
+Airborne Weapons - Any item classified as a weapon will be displayed as a
+                   red missile + direction.
+
+Direction indicators - Most items displayed on the radar screen will
+                       display a current direction. The colour of this arrow
+                       indicates its type:
+  GREEN - Friendly ships.
+  RED   - Enemy ships.
+  WHITE - The player ship.
+
+Ground Mission Targets - Targets which must be destroyed to complete a
+                         mission are shown by a small flashing 'x'.
+
+Information points - Indicated by a flashing 'I'. Clicking on one of these
+                     will give a detailed briefing on a particular location
+                     or target area. To close the location briefing,
+                     de-select the main briefing icon.
+
+----------------------------------------------------------------------------
+
+>> 8 - Tactics -
+   =============
+
+>> 8.1 Defensive Tactics
+
+  General principles (1) - "Do not spread your attack force too thinly. If
+there is something to attack, it is safe to assume that it may attack you.
+It is more important to finish a mission at a steady pace than to waste
+licence payers fees on scrap metal."
+(Advanced pilots manual Pg 56, Vol II)
+
+  Most of the missions will require you to re-dock with the mothership when
+finished. If this is so, and the mothership is under enemy attack, you must
+defend it to the death to avoid being stranded on an enemy planet.
+
+>> 8.2 Friendly Formations
+
+a) Getting a formation together.
+
+  On some missions, you may have to locate members of your attack force and
+request they join from a patrol. A close fly-by the leader of the friendly
+formation will signal a request to join the attack force, and all following
+will join. It is good defensive practice (and good manners) to allow the
+formation to settle behind you before moving into dangerous areas.
+
+b) Attacking with a formation.
+
+  Pressing 'A' will send your formation in to battle with the nearest
+airborne targets. They will always attack on a one to one basis (ie. 2
+enemy craft nearby, 2 will break formation), the rest stay with you for
+defence.
+
+  If you wish to raise the stakes, pressing 'A' again, will send in more of
+your formation, increasing your chances of victory, but also your potential
+losses.
+
+c) Knowing when to retreat.
+
+  Keep a careful eye on your attack force - Fednet military advocate the
+use of C&C (Care and control) at all times.
+
+  General principles (2) - "Care and Control - Every pilot lost to the
+enemy increases their strategic advantage. Do not abandon your fellow
+pilots unless it looks dodgy, in which case, leg it back to the mothership
+and let them fight it out"
+(Advanced pilots manual Pg 5, Vol I)
+
+  You will receive radio updates from time to time from your attack force.
+If things get too rough, 'R' will re-group your formation. However, be
+careful not to force your wingmen into retreat if it puts them in a
+vulnerable position as they leave the battle scene. If consistently fired
+upon while trying to re-group, they will return to combat.
+
+d) Re-allocation of targets.
+
+  When an enemy target is destroyed by a friendly craft, the nearest enemy
+targets to the player will always be selected for attack. If none are
+found, the friendly ship will attempt to rejoin your formation. This serves
+2 main purposes:
+
+  a) It is good defensive practice to defend the formation leader.
+
+  b) Formation pilots are fully aware that it is common for flight leaders
+to swan about enjoying themselves while they get pounded to bits.
+
+e) Friendly Fire & Losses.
+
+  Friendly pilots will tolerate a certain amount of friendly fire before
+switching sides and trying to kill you. This can however lead to some quite
+exciting battles as the formation you have left will leap to your defence.
+You will also receive points for attacking your own team, it is a game show
+after all ...
+
+  In the sad event of a friendly pilot dying in combat (while he / she is
+still on your side), it should be remembered that it is extremely bad
+manners to pick up the  bonus coins left behind.
+
+----------------------------------------------------------------------------
+
+>> 9 - Flight Control & Weapon Systems -
+   =====================================
+
+>> 9.1 The Predator Mk-IV : Flight & Control
+
+  The ship you will be flying for most of the missions is the Predator Mk
+IV standard issue combat fighter. The Predator is fitted with two FedEng
+hyper drive thrusters with built in gyroscopic stabilising units. These can
+be upgraded to provide better acceleration and faster turning speed.
+
+  To further assist the ship's turning capabilities there are also
+stabilising wings on either side of the ship engines. These are designed to
+use the ship's aerodynamic properties to increase the turning speed where
+the atmosphere is dense enough. Consequently the turning power of your ship
+is reduced when you are at high altitude or the atmosphere of the planet is
+thin. However as air friction is reduced your ship will be able to attain
+higher velocities.
+
+  The standard ship's engines and control power have 6 upgrades available.
+Fednet combat research suggest that engine power is more useful when the
+atmosphere is dense (eg. Earth, Ice Planets etc.) and the control rate more
+useful for planets with a thinner or no atmosphere (eg. Deathstars etc.)
+
+  When your ship is turning there is a reduction in speed which can be used
+to your advantage to slow down quickly by rolling with the engines off.
+This speed reduction can also be a disadvantage to you if you are being
+attacked by ground fire, it's best to keep moving in these situations.
+
+>> 9.2 Defence Systems
+
+  The most important defences are your shields which have 7 upgrades
+available. The shields are slowly replenished by the ship's CFG (Central
+Fusion Generator), however if you are docked with the mother ship your
+shields will be charged at a higher rate.
+
+  ECMs (Electronic Counter Measures) are your only other defences. Known to
+the troops as the ADD (Annoyed Duck Device), these work by sending a high
+frequency energy wave from your ship destroying all missiles in the
+immediate area. ECMs require very high quantities of power to be activated
+and consequently drain a small amount of energy from your shields banks.
+
+'The best form of defence is attack!', quote from Ohlan Farn's best selling
+paperback, 'Star Fighter Pilot - Man or Mouse ?'.
+
+>> 9.3 Attack Systems
+
+  The Predator can be fitted with a wide selection of weapons including
+Lasers, Air to Ground missiles (A-T-G), Air to Air missiles (A-T-A) and a
+selection of currently classified super weapons.
+
+  Laser Cannons have 7 upgrades available which will increase the number of
+beams fitted and the destructive power of each beam.
+
+  A-T-G missiles, when selected, will highlight the currently locked onto
+object with green outline. Once fired they will identify and home into the
+most vulnerable point. A-T-A missiles highlight the currently locked onto
+ship in red.
+
+Note - Missiles only have a certain amount of fuel and will detonate if they
+don't reach their target within a certain time.
+
+  In addition, when using missiles on ground guns, satellites or large star
+cruisers, there is a possibility that the missiles will be shot down by the
+laser fire. It is good combat practice to try and draw the laser fire away
+after you have fired missiles at these targets.
+
+>> 9.4 Taking Flak
+
+  When your ship is hit by laser fire the power surge generated can
+temporarily jolt the gyroscopic stabilising units causing the ship to roll.
+This effect can be more dramatic when hit by missiles or crashing into
+objects.
+
+  If your shields are critical and you take a hit, the C.C.S. (Central
+Control System) may shut down in order to route all available power to
+charging the shield banks. Whilst the C.C.S. is down, the ship is very hard
+to control and very vulnerable. With the damage critical there is a
+possibility that further hits might damage your engines, control or shield
+banks or cause a total system overload destroying your ship, doing you
+serious injury in the process.
+
+>> 9.5 Docking
+
+  The Fednet mothership will accompany you on most missions. If there are
+any enemy fighters in the area the mother ship will attack, but cannot
+deviate from its pre set flightpath. It's also necessary that you are
+docked before you can purchase any ship upgrades.
+
+  The docking bay is situated to the rear of the ship and uses the FedEng
+matter tractor beam to help secure safer docking.
+
+  It's a good idea to follow the mothership slowly and wait until it's on
+straight level flight before attempting to dock. Don't attempt to dock too
+quickly or at a steep angle as this might prove fatal.
+
+Note: During dock, any enemy fighters that you were engaged in combat with
+will automatically attack the mothership.
+
+  On entering the docking bay the camera will change to an internal view of
+the mothership and all pilots controls will be overridden. To initialise
+the launch sequence when docked engage your thrusters and you will be
+automatically released from the tractor beam.
+
+>> 9.6 Flying Other Ships
+
+  FedEng are responsible for manufacturing over 70% of the known fighters
+in the universe and on certain missions you will have the opportunity to
+fly new ships as they are developed, or customised versions of the
+Predator. It is important that you read the mission brief to get an idea of
+what these ships are capable of.
+
+>> 9.7 Bonus Coins and Parachutes
+
+  When you destroy a ground object or a ship, bonus coins will be left in
+its place for you to collect. These bonuses consist of cash awards, extra
+missiles or extra lives. There is also the occasional 'damage' coin thrown
+in by Fednet master control, to keep you on your toes; these coins will
+instantly drain all your power if collected.
+
+  Strategic command will occasionally drop parachutes into the combat arena
+and you will receive the message 'Parachute Drop Detected'. Parachutes are
+marked on the map and if you are quick to respond you can collect yourself
+a mystery prize.
+
+                        END OF PILOT BRIEFING
+                              GOOD LUCK
+
+----------------------------------------------------------------------------
+
+>> 10 - Credits & Contact Details -
+   ================================
+
+>> 10.1 Credits
+
+                         STAR FIGHTER 3000
+
+                            Release 3.21
+
+                            Programmed by
+       The World Federation Entertainments Network © 1994
+
+                      Sound & Music - A. M. Perrins
+              Artwork  - Tod Original Design & Chris Mills
+           Typesetting & Printing - SmartDTP & Annie Berwick
+                 Additional Routines - Gordon J. Key
+          Testing & Gameplay - Peter Moleworth, S. P. Hammond
+
+           Gamecode & Design - T. D. Parry & A. P. Hutchings
+
+                        For iSV Products / APDL :
+                 Additional programming - C. J. Bazley
+                     Additional Artwork - Ramuh
+                     Licensing - Nathan Atkinson
+
+                             - WARNING -
+             Software Piracy destroys Software Production
+
+  This program uses CBLibrary, which is © 2003 Christopher Bazley. This
+library and its use are covered by the GNU Lesser General Public Licence.
+
+>> 10.2 Contact Details
+
+  Star Fighter 3000 is distributed without any warranty but feel free to
+send bug reports or suggestions to the address below. Check the web site
+for future updates
+
+  Email: mailto:cs99cjb@gmail.com
+
+  WWW:   http://starfighter.acornarcade.com

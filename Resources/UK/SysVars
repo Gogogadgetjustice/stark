@@ -1,0 +1,6 @@
+| System variables for help system
+Set Star3000$Version "3.20"
+Set Star3000$Web "http://starfighter.acornarcade.com"
+Set Star3000$Title "Star Fighter 3000"
+Set Star3000$Publisher "Fednet Software"
+Set Star3000$Description "Futuristic aerial combat game"

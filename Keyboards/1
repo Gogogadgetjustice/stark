@@ -1,0 +1,110 @@
+# Names for the keys on a standard UK PC keyboard
+# Note that an Archimedes keyboard is slightly different
+# The numbers are those used for key transition events
+
+K0:Escape
+K1:F1
+K2:F2
+K3:F3
+K4:F4
+K5:F5
+K6:F6
+K7:F7
+K8:F8
+K9:F9
+K10:F10
+K11:F11
+K12:F12
+K13:Print Scrn
+K14:Scroll Lock
+K15:Pause
+K16:¬ ` ¦
+K17:! 1
+K18:" 2
+K19:£ 3
+K20:$ 4
+K21:% 5
+K22:^ 6
+K23:& 7
+K24:* 8
+K25:( 9
+K26:) 0
+K27:_ -
+K28:+ =
+K29:£
+K30:Backspace
+K31:Insert
+K32:Home
+K33:Page Up
+K34:Num Lock
+K35:Keypad /
+K36:Keypad *
+K38:Tab
+K39:Q
+K40:W
+K41:E
+K42:R
+K43:T
+K44:Y
+K45:U
+K46:I
+K47:O
+K48:P
+K49:{ [
+K50:} ]
+K51:~ #
+K52:Delete
+K53:End
+K54:Page Down
+K55:Keypad 7
+K56:Keypad 8
+K57:Keypad 9
+K58:Keypad -
+K59:Ctrl (L)
+K60:A
+K61:S
+K62:D
+K63:F
+K64:G
+K65:H
+K66:J
+K67:K
+K68:L
+K69:: ;
+K70:@ '
+K71:Return
+K72:Keypad 4
+K73:Keypad 5
+K74:Keypad 6
+K75:Keypad +
+K76:Shift (L)
+K77:| \
+K78:Z
+K79:X
+K80:C
+K81:V
+K82:B
+K83:N
+K84:M
+K85:< ,
+K86:> .
+K87:? /
+K88:Shift (R)
+K89:Up
+K90:Keypad 1
+K91:Keypad 2
+K92:Keypad 3
+K93:Caps Lock
+K94:Alt (L)
+K95:Space
+K96:Alt (R)
+K97:Ctrl (R)
+K98:Left
+K99:Down
+K100:Right
+K101:Keypad 0
+K102:Keypad .
+K103:Kp Enter
+K112:Select
+K113:Menu
+K114:Adjust
